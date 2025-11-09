@@ -101,3 +101,33 @@ body{
 
 /* small helper */
 .screen.error{color:#ff6b6b}
+
+/* layout for history + keyboard */
+.panel{display:flex; gap:14px; align-items:flex-start}
+.history{width:120px; background: rgba(255,255,255,0.02); border-radius:10px; padding:8px; color:var(--muted);}
+.history-header{font-size:12px; text-transform:uppercase; margin-bottom:6px}
+.history-list{list-style:none; padding:0; margin:0; max-height:160px; overflow:auto}
+.history-list li{font-size:13px; padding:6px 4px; border-bottom:1px dashed rgba(255,255,255,0.02); color:var(--text);}
+.history-actions{display:flex; justify-content:center; margin-top:8px}
+
+.keyboard{flex:1}
+.calc-header{display:flex; justify-content:space-between; align-items:center}
+.mini.key{padding:8px 10px; font-size:12px; border-radius:8px}
+
+/* advanced panel hidden by default */
+.advanced{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; opacity:0; max-height:0; overflow:hidden; transition:all .25s ease}
+.advanced.show{opacity:1; max-height:160px}
+
+/* animation for screen updates */
+.screen{transition:transform .14s ease, opacity .14s ease}
+.screen.updated{transform:translateY(-6px); opacity:.95}
+
+/* ripple-like press animation */
+.key::after{content:''; position:absolute; inset:0; border-radius:12px; transition:transform .28s ease, opacity .28s; transform:scale(0); opacity:0}
+.key:active::after{transform:scale(1); opacity:.06}
+
+/* mobile tweaks for panel */
+@media (max-width:540px){
+    .panel{flex-direction:column}
+    .history{width:100%; order:2}
+}
