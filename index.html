@@ -1,14 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <script src="script/script.js"></script>
-    <title>Private App</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-    <p>This is for testing purpose!</p>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Responsive Calculator</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <main class="calculator" role="application" aria-label="Calculator">
+            <div class="brand">Calculator</div>
+            <div class="screen" id="screen" aria-live="polite">0</div>
+
+            <div class="keys" role="group" aria-label="Calculator keys">
+                <button class="key key-utility" data-action="clear">C</button>
+                <button class="key key-utility" data-action="plus-minus">±</button>
+                <button class="key key-utility" data-action="percent">%</button>
+                <button class="key key-op" data-action="divide">÷</button>
+
+                <button class="key" data-value="7">7</button>
+                <button class="key" data-value="8">8</button>
+                <button class="key" data-value="9">9</button>
+                <button class="key key-op" data-action="multiply">×</button>
+
+                <button class="key" data-value="4">4</button>
+                <button class="key" data-value="5">5</button>
+                <button class="key" data-value="6">6</button>
+                <button class="key key-op" data-action="subtract">−</button>
+
+                <button class="key" data-value="1">1</button>
+                <button class="key" data-value="2">2</button>
+                <button class="key" data-value="3">3</button>
+                <button class="key key-op" data-action="add">+</button>
+
+                <button class="key key-zero" data-value="0">0</button>
+                <button class="key" data-value=".">.</button>
+                <button class="key key-equals" data-action="equals">=</button>
+            </div>
+        </main>
+
+        <script src="script/script.js" defer></script>
+    </body>
 </html>
