@@ -1,0 +1,1 @@
+window.alert("Welcome to the Private App!");
